@@ -1,3 +1,5 @@
 *~
 bin
 external
+
+src/evernote/developper_token.json
