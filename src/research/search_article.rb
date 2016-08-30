@@ -29,7 +29,7 @@ if /PRL/i =~ journal then
 
   # Physical Review Letters D
 elsif /PRD/i =~ journal then
-  volume = volme.to_i
+  volume = volume.to_i
   page = page.to_i
   page = "%06d" % page
   puts "Physical Review Letters D, Volume #{volume}, pp. #{page} searched."
