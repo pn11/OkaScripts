@@ -3,3 +3,5 @@ bin
 external
 
 src/evernote/developper_token.json
+
+src/pocket/token.json
