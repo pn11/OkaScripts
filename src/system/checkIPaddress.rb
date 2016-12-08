@@ -19,6 +19,7 @@ if uname == "Darwin"
   computerName.gsub!("\uFFFD", "") # NO REPLACED SYMBOLXS
 
   ipaddress = `ifconfig en0 | grep inet | grep -v inet6 | awk \'{print \$2}\'`.chomp
+  ipaddress2 = `ifconfig en9 | grep inet | grep -v inet6 | awk \'{print \$2}\'`.chomp
   
 end
 
@@ -27,6 +28,8 @@ foutname = "#{dir}/ip_#{computerName}.txt"
 
 fout = File.open(foutname, "w")
 fout.puts ipaddress
+fout.puts ipaddress2
 fout.close
 
 puts "ipaddress was #{ipaddress}. Saved in #{foutname}."
+puts "ipaddress was #{ipaddress2}. Saved in #{foutname}."
