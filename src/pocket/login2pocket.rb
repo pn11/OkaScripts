@@ -3,7 +3,6 @@
 
 require 'oauth'
 require 'oauth/consumer'
-require "evernote_oauth"
 require "json"
 
 def login2pocket(dirname)
