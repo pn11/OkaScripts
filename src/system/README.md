@@ -13,3 +13,7 @@ repeat 10 ls -l
 ```
 
 will repeat `ls -l` every 10 seconds.
+
+## send2dropbox
+
+Copy specified files to `~/Dropbox`.
