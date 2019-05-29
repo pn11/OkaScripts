@@ -8,9 +8,10 @@ Options:
     -u=<USERNAME>, --user=<USERNAME>  Set username [default: pn11].
     -p=<PROTOCOL>, --protocol=<PROTOCOL>  Set protocol [default: ssh].
 """
+from docopt import docopt
+import requests
 import sys
 import subprocess
-from docopt import docopt
 
 USERNAME = "pn11"
 PROTOCOL = "ssh"
@@ -42,6 +43,14 @@ def clone_fn(**args):
 def list_fn(**args):
     user_name = args["--user"]
     print("List of {}'s repository:".format(user_name))
+    r = requests.get('https://api.github.com/users/{}/repos'.format(user_name))
+    try:
+        repo_list = r.json()
+        for repo in repo_list:
+            #print("{} updated at {}".format(repo['full_name'], repo['updated_at']))
+            print(repo['full_name'])
+    except KeyError:
+        print("Repository not found.")
 
 
 def help_fn(**args):
