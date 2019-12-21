@@ -1,7 +1,7 @@
 #!/bin/bash
 # apt-get の履歴を保存する。
 
-apt-get $@
+sudo apt-get $@
 
 if [ $? -eq 0 ]
 then
