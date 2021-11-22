@@ -6,7 +6,7 @@ if [ -d nef ]; then
 fi
 
 if [ -d jpg_org ]; then
-    mkdir jpeg_org
+    mkdir jpg_org
 fi
 
 mv *JPG jpg_org/
