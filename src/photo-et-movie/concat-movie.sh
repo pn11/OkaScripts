@@ -11,5 +11,5 @@ do
     echo file \'$file\'
 done > inputs-ffmpeg.txt
 
-ffmpeg -f concat -safe 0 -i inputs-ffmpeg.txt -c:v copy -c:a aac $OUTNAME
-ffmpeg -i $OUTNAME -filter_complex "[0:v]setpts=0.1*PTS[v];[0:a]atempo=10[a]" -map "[v]" -map "[a]" ${OUTNAME}-10x.mp4
+ffmpeg -f concat -safe 0 -i inputs-ffmpeg.txt -movflags use_metadata_tags -c:v copy -c:a aac $OUTNAME
+ffmpeg -i $OUTNAME -movflags use_metadata_tags -filter_complex "[0:v]setpts=0.1*PTS[v];[0:a]atempo=10[a]" -map "[v]" -map "[a]" ${OUTNAME}-10x.mp4
